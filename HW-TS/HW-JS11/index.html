@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HW-JS11</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .scroll-to-top {
+        position: fixed;
+        bottom: 50px;
+        right: 50px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        display: none;
+        transition: all 0.9s ease-in-out;
+        box-shadow: #007bff 0px 0px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <h2>users</h2>
+    <div id="users"></div>
+    <hr />
+    <h2>carts</h2>
+    <div id="carts"></div>
+    <div id="pagination"></div>
+    <hr />
+    <h2>recipes</h2>
+    <div id="recipes"></div>
+
+    <button onclick="scrollToTop()" class="scroll-to-top">
+      Back <br />to Top
+    </button>
+    <div id="root"></div>
+    <div class="main-title"></div>
+    <div class="user-details"></div>
+
+    <script>
+      window.addEventListener("scroll", function () {
+        var button = document.querySelector(".scroll-to-top");
+        if (window.pageYOffset > 100) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      });
+
+      function scrollToTop() {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+      }
+    </script>
+    <script src="./index.js"></script>
+  </body>
+</html>
